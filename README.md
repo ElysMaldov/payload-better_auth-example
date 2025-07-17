@@ -20,7 +20,6 @@ This repository showcases how to manually integrate Payload with Better Auth usi
     - [8. Results](#8-results)
     - [9. Maintenance step](#9-maintenance-step)
     - [10. Other things you can do](#10-other-things-you-can-do)
-  - [Why and when to use Better Auth with Payload?](#why-and-when-to-use-better-auth-with-payload)
 
 ## Running Project
 
@@ -161,5 +160,3 @@ Since you now have a somewhat normal Better Auth instace, you could add plugins 
 3. Add login by username
 4. Use MongoDB adapter instead of drizzle and PostgreSQL (something I did in my LMS project [Akasia Education](https://akasiaedu.com))
 5. Anything else Better Auth can do should be possible in this setup as well without affecting Payload CMS
-
-## Why and when to use Better Auth with Payload?
