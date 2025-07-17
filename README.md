@@ -129,7 +129,7 @@ When you disable Payload's local strategy using `disableLocalStrategy`, you will
 Follow these steps to setup:
 
 1. [Follow the installation guide and choose Next.js (also don't forget to setup the prerequisites like setting up Shadcn)](https://better-auth-ui.com/getting-started/requirements).
-2. Move the `/app/auth` folder into `/app/(payload)/admin/auth`. This is because Paylaod will redirect you to `/admin/{auth-path}` when you need to authenticate, for example `/admin/login` or `/admin/`.
+2. Move the `/app/auth` folder into `/app/(payload)/admin/auth`. This is because Payload will redirect you to `/admin/{auth-path}` when you need to authenticate, for example `/admin/login` or `/admin/`.
 3. Now we need to map Payload redirects to what Better Auth requires. Open the `payload.config.ts` file and you'll notice inside the `admin` field in `buildConfig` there is `routes` that maps which page should go to which path. I set it up so that it conforms to what [Better Auth UI requires](https://better-auth-ui.com/integrations/next-js#creating-auth-pages), but since you can change those as well, remember to re-map this field again.
 4. Once that's done, if you try to go to the admin dashboard unauthenticated or logging out, you should be redirected to the correct page
 
