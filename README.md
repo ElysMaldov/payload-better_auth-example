@@ -97,13 +97,13 @@ Now remember in step 3 Better Auth wants you to create an instance in `auth.ts` 
 
 ### 4. Setting up custom strategy for User collection 🔑
 
-The is the most important step to integrating these two tools. Payload allows us to setup [custom auth strategies](https://payloadcms.com/docs/authentication/custom-strategies) that makes us able to integrate different kind of auth systems other than just Better Auth with Payload CMS. We can add custom strategies to any auth-enabled collections in Payload. So if you have 3 auth collections like SuperAdmins, Admins, and Users, you can set different auth strategies with them like SuperAdmins using the default Payload auth, Admins using Clerk, and Users using Better Auth.
-
+The is the most important step to integrating these two tools. Payload allows us to setup [custom auth strategies](https://payloadcms.com/docs/authentication/custom-strategies) that makes us able to integrate different kind of auth systems other than just Better Auth with Payload CMS.
+  
 When we add custom strategies, we **could** disable Payload's local auth strategy using `disableLocalStrategy` in the auth-enabled collection so that we make sure all of our auth operations goes through our auth libraries. But this comes with a significant cost of also disabling the auth UI from Payload's admin dashboard, that is you can't access the login, create first user, and reset password pages anymore. So not only you have to setup a custom strategy logic, now you also have to setup your UI pages again. Later there will be a step to re-create those UIs again easily.
 
 For now, open [`src/collections/auth/Users.ts`](src/collections/auth/Users.ts) and see the `strategies` field inside of `auth` field in the collection config to see how the custom strategy works.
 
-The gist of how it works is that you can pass in multiple functions to `strategies` where each function receives some args (e.g. headers) and should use those args to authenticate the user; then returning the user data if authenticated or null if not authenticated. This is where Payload will explicitly require Better Auth.
+The gist of how it works is you can pass in multiple functions to `strategies` where each function receives some args (e.g. headers) and should use those args to authenticate the user; then returning the user data if authenticated or null if not authenticated. This is where Payload will explicitly require Better Auth.
 
 These strategies will run in the order you put them in, and if I'm not mistaken, the final strategy return data will be considered as the user data to be used by Payload. From my testing, these strategies runs during:
 
