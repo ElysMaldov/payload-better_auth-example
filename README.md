@@ -137,7 +137,7 @@ Follow these steps to setup:
 >
 > One important page that goes missing is the create-first-user page, which only shows up when you are creating your first database user which usually is the admin/superAdmin. This setup redirects first user and any user without an account to the registration page, which means that anybody can register and gain access to your admin dashboard. This is something you have to figure out for yourself.
 >
-> My approach (which is not documented fully in this repo) is to use RBAC by having a `role` field in the Users collection and using Better Auth admin plugin to check the role permissions in the Users collection `admin` access control. The `admin` access control is used in the auth-enabled Payload collection that is used to gain access to the Admin dashboard and allows us to determine if the user can access the admin dashboard or not ([see docs here](https://payloadcms.com/docs/access-control/collections#admin)). Open the Users collection file for the example code that is commented.
+> My approach (which is not documented fully in this repo) is to use RBAC by having a `role` field in the Users collection and using Better Auth admin plugin to check the role permissions in the Users collection's `admin` access control; and based on this check, it will determine whether the user can access the dashboard or not. The `admin` access control is used in the auth-enabled Payload collection that is used to gain access to the Admin dashboard and allows us to determine if the user can access the admin dashboard or not ([see docs here](https://payloadcms.com/docs/access-control/collections#admin)). Open the Users collection file for the example code that is commented.
 >
 > ⚠️⚠️⚠️
 

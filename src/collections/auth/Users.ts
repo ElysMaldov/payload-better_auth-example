@@ -58,7 +58,7 @@ export const Users: CollectionConfig = {
   ],
   // access: {
   //   admin: async ({ req }) => {
-  //     const controller = await auth.api.userHasPermission({ // Only available when you setup the admin plugin
+  //     const {results} = await auth.api.userHasPermission({ // Only available when you setup the admin plugin
   //       body: {
   //         permissions: {
   //           adminDashboard: ['read'],
@@ -67,7 +67,6 @@ export const Users: CollectionConfig = {
   //       },
   //     })
 
-  //     const results = await controller({ req })
   //     const isAllowed = typeof results === 'boolean' ? results : false
 
   //     return isAllowed
